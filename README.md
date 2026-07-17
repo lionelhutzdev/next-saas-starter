@@ -69,6 +69,7 @@ Este starter solo trae lo que se usa. Si agregás un SDK de LLM (Groq, OpenAI, A
 - Supabase (Postgres + RLS)
 - Sentry (`@sentry/nextjs`) — opcional, deshabilitado si no hay DSN
 - Playwright para E2E
+- GitHub Actions (`.github/workflows/ci.yml`): lint + build en cada PR/push a `main`, con env vars dummy (nunca toca un Supabase real)
 
 ## Scripts
 
