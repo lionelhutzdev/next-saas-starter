@@ -52,6 +52,7 @@ Buscá `[TU_PRODUCTO]`, `[TU_EMAIL]`, `TU PRODUCTO`, `TODO` en el repo y complet
    printf '%s' "$VALOR" | npx vercel env add NOMBRE_VAR production
    ```
 5. `npx vercel --prod`
+6. Habilitar Analytics: en el dashboard de Vercel → tu proyecto → pestaña **Analytics** → Enable. El componente `<Analytics />` ya está en `layout.tsx`; sin este paso no rompe nada, simplemente no manda datos.
 
 ### 5. Dependencias
 Este starter solo trae lo que se usa. Si agregás un SDK de LLM (Groq, OpenAI, Anthropic) para probar y después cambiás de proveedor, **acordate de desinstalar el que no quedó** (`npm uninstall <pkg>`) — quedó como deuda en el proyecto original hasta que alguien lo notó meses después.
@@ -68,6 +69,7 @@ Este starter solo trae lo que se usa. Si agregás un SDK de LLM (Groq, OpenAI, A
 - Next.js 15 / React 18 / Tailwind
 - Supabase (Postgres + RLS)
 - Sentry (`@sentry/nextjs`) — opcional, deshabilitado si no hay DSN
+- Vercel Analytics (`@vercel/analytics`) — hay que habilitarlo en el dashboard de Vercel (ver checklist arriba)
 - Playwright para E2E
 - GitHub Actions (`.github/workflows/ci.yml`): lint + build en cada PR/push a `main`, con env vars dummy (nunca toca un Supabase real)
 
